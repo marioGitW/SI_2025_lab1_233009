@@ -1,0 +1,81 @@
+1. vekje imam kreiran profil na github
+2. promeneto vo master
+3. vo repositories -> new repository (SI_2025_lab1_233009 , private)
+4. mkdir SI_2025_lab1_233009  -> cd SI_2025_lab1_233009 -> git init
+5. git remote add origin https://github.com/marioGitW/SI_2025_lab1_233009.git , proverka so git remote -v
+6. nano README.md (Mario Spasovski 233009) ctrl+x y -> git add README.md -> git commit -m "Initial commit"
+7. git add SI2025Lab1Main.java -> git commit -m "Add starter code" 
+8. git push -u origin master
+
+
+9. Projects -> New Project -> Kanban -> rename SI2025
+10. Backlog add item -> set name and repository
+11. selected task ->more actions -> move to column -> in progress 
+12. selected item -> more actions -> open in new tab -> development -> create a branch (za site 3)
+
+
+13. git fetch origin
+14-1. git checkout 2-remove-a-task-by-name 
+15-1. menuvam vo java file , funkcijata za removeTask 
+
+public void removeTask(String name) {
+        // TODO: Implement removal logic
+        for (Task task : tasks) {
+            if (task.getName().equals(name)) {
+                tasks.remove(task);
+            }
+        }
+    }
+
+
+16-1. git commit -am "Remove a task by name"
+17-1. git push origin 2-remove-a-task-by-name
+
+14-2. git checkout 8-count-tasks-per-category
+15-2. menuvam vo java file , funkcijata za countTasksPerCategory
+
+
+public Map<String, Integer> countTasksPerCategory() {
+        // TODO: Implement counting logic
+        HashMap<String, Integer> map = new HashMap<>();
+        for(Task task : tasks) {
+           if(map.containsKey(task.getCategory())) {
+               map.put(task.getCategory(), map.get(task.getCategory()) + 1);
+           }else{
+               map.put(task.getCategory(), 1);
+           }
+        }
+        return new HashMap<>();
+    }
+
+16-3. git commit -am "Count tasks per category"
+17-3. git push origin 8-count-tasks-per-category
+
+
+
+14-3. git checkout 9-mark-a-task-as-completed-by-name
+15-3. menuvam vo java file , funkcijata za markTaskCompleted
+
+
+ public void markTaskCompleted(String name) {
+        // TODO: Implement completion logic
+        for (Task task : tasks) {
+            if (task.getName().equals(name)) {
+                task.complete();
+            }
+        }
+    }
+
+16-3. git commit -am "Mark a task as completed by name"
+17-3. git push origin 9-mark-a-task-as-completed-by-name
+
+18. Na github , vo SI_2025_lab1_233009 repository , klik na kopce Compare& Pull Request
+	potoa Create pull request
+19. napraveno za site
+20. samo klik na kopce merge pull request - ne se slucuva konflikt zatoa sto ima izmeni na razlicen del od kodot
+21. da prefrleni se vo proektot od faza in progress vo faza done ( samo 2 granki sto se merged)
+
+22. git checkout master -> git pull origin master -> git merge 8-count-tasks-per-category
+23. git push origin master
+24. da pull requestot e zatvoren i grankata e premestena vo done delot od proektot , nema konflikti
+25.  git log --oneline --graph --all >> logs.txt

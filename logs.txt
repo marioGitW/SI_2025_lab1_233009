@@ -1,0 +1,15 @@
+*   543f85b Merge branch '8-count-tasks-per-category'
+|\  
+| * 3f59169 Count tasks per category
+* |   65b82cb Merge pull request #11 from marioGitW/2-remove-a-task-by-name
+|\ \  
+| * | d0f274c Remove a task by name
+| |/  
+* |   e3085d5 Merge pull request #13 from marioGitW/9-mark-a-task-as-completed-by-name
+|\ \  
+| |/  
+|/|   
+| * 61a5ea7 Mark a task as completed by name
+|/  
+* 291bdf0 Add starter code
+* 8fbcc7e Initial commit
